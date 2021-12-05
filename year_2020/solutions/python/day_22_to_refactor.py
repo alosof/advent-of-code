@@ -2,10 +2,8 @@ import os
 from typing import List, Tuple, Set
 
 from year_2020.solutions.python.utils.files import INPUTS_FOLDER
-from year_2020.solutions.python.utils.timing import timer
 
 
-@timer
 def solve_2(player_1: List[int], player_2: List[int]) -> int:
     player_1_copy, player_2_copy = player_1.copy(), player_2.copy()
     winner_id, winner_deck = recursive_combat(player_1_copy, player_2_copy, set())
@@ -19,7 +17,8 @@ def recursive_combat(player_1: List[int],
         winner_id, winner_deck = winner(player_1, player_2)
         return winner_id, winner_deck
     else:
-        while len(player_1) > 0 and len(player_2) > 0 and (len(player_1) <= player_1[0] or len(player_2) <= player_2[0]):
+        while len(player_1) > 0 and len(player_2) > 0 and (
+                len(player_1) <= player_1[0] or len(player_2) <= player_2[0]):
             if (tuple(player_1), tuple(player_2)) in memory:
                 return 1, player_1
             memory.add((tuple(player_1), tuple(player_2)))
@@ -47,7 +46,6 @@ def recursive_combat(player_1: List[int],
             return recursive_combat(player_1, player_2, memory)
 
 
-@timer
 def solve_1(player_1: List[int], player_2: List[int]) -> int:
     player_1_copy, player_2_copy = player_1.copy(), player_2.copy()
     winner_id, winner_deck = combat(player_1_copy, player_2_copy)

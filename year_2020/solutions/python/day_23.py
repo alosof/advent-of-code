@@ -1,15 +1,11 @@
 from typing import List, Dict
 
-from year_2020.solutions.python.utils.timing import timer
 
-
-@timer
 def multiply_the_two_successors_of_cup_one(starting_config: int, total_cups: int, moves: int) -> int:
     cups_linked_list: Dict[int, int] = move_cups(starting_config, total_cups, moves)
     return cups_linked_list[1] * cups_linked_list[cups_linked_list[1]]
 
 
-@timer
 def list_labels_after_cup_one(starting_config: int, total_cups: int, moves: int) -> int:
     cups_linked_list: Dict[int, int] = move_cups(starting_config, total_cups, moves)
     result: str = ''

@@ -1,9 +1,6 @@
 from typing import List, Dict, Optional
 
-from year_2020.solutions.python.utils.timing import timer
 
-
-@timer
 def get_last_spoken_number(starting_sequence: List[int], turns_to_play: int) -> int:
     game_memory: Dict[int, int] = {v: k + 1 for k, v in enumerate(starting_sequence)}
     turn: int = len(starting_sequence) + 1

@@ -14,12 +14,12 @@ function main()
     card_pub = 15065270
 
     # Part 1
-    part_1_result::Int = @time find_encryption_key(door_pub, card_pub)
+    part_1_result::Int = find_encryption_key(door_pub, card_pub)
     @assert part_1_result == 12285001
     println("Part 1 result : ", part_1_result)
 
     # Part 2
-    part_2_result::Char = @time '🎄'
+    part_2_result::Char = '🎄'
     @assert part_2_result == '🎄'
     println("Part 2 result : ", part_2_result)
 end

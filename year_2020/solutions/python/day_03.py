@@ -3,10 +3,8 @@ from math import prod
 from typing import List, Tuple
 
 from year_2020.solutions.python.utils.files import read_lines, INPUTS_FOLDER
-from year_2020.solutions.python.utils.timing import timer
 
 
-@timer
 def multiply_tree_counts_for_several_slopes(area_map: List[str], slopes: List[Tuple[int, int]]) -> int:
     return prod(count_trees(area_map, slope_right, slope_down) for slope_right, slope_down in slopes)
 

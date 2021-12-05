@@ -4,7 +4,6 @@ from itertools import product
 from typing import List, Dict, Tuple, Callable
 
 from year_2020.solutions.python.utils.files import read_grid, INPUTS_FOLDER
-from year_2020.solutions.python.utils.timing import timer
 
 Map = List[List[str]]
 
@@ -20,7 +19,6 @@ DIRECTIONS: Dict[str, Tuple[int, int]] = {
 }
 
 
-@timer
 def count_neighbors_after_map_stabilizes(seat_map: Map,
                                          threshold: int,
                                          neighbor_counter: Callable[[int, int, Map], int]) -> int:

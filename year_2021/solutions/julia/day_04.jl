@@ -57,12 +57,12 @@ function main()
     bingo, boards = read_bingo_and_boards(input_file_path)
 
     # Part 1
-    part_1_result::Int = @time find_first_winning_board_score(bingo, boards)
+    part_1_result::Int = find_first_winning_board_score(bingo, boards)
     @assert part_1_result == 63552
     println("Part 1 result : ", part_1_result)
 
     # Part 2
-    part_2_result::Int = @time find_last_winning_board_score(bingo, boards)
+    part_2_result::Int = find_last_winning_board_score(bingo, boards)
     @assert part_2_result == 9020
     println("Part 2 result : ", part_2_result)
 end

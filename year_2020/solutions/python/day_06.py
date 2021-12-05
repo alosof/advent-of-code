@@ -3,10 +3,8 @@ from functools import reduce
 from typing import List, Callable, Set, Generator
 
 from year_2020.solutions.python.utils.files import read_list_of_lists, INPUTS_FOLDER
-from year_2020.solutions.python.utils.timing import timer
 
 
-@timer
 def count_answers(groups: List[List[str]], count_method: Callable[[List[str]], Set[str]]) -> int:
     return sum((len(count_method(group)) for group in groups))
 

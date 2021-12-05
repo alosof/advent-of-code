@@ -2,10 +2,8 @@ import os
 from typing import List, Callable
 
 from year_2020.solutions.python.utils.files import read_lines, INPUTS_FOLDER
-from year_2020.solutions.python.utils.timing import timer
 
 
-@timer
 def find_seat(seats: List[str], search_function: Callable[[List[str]], int]) -> int:
     return search_function(seats)
 

@@ -2,10 +2,8 @@ import os
 from typing import List, Tuple
 
 from year_2020.solutions.python.utils.files import read_lines, INPUTS_FOLDER
-from year_2020.solutions.python.utils.timing import timer
 
 
-@timer
 def navigation_distance(raw_instructions: List[str], method: str) -> int:
     instructions: List[Tuple[str, int]] = [parse_instruction(i) for i in raw_instructions]
     final_ship_position: Tuple[int, int] = navigate(instructions, method)

@@ -4,13 +4,11 @@ from typing import Set, List, Dict
 from typing import Tuple
 
 from year_2020.solutions.python.utils.files import INPUTS_FOLDER, read_lines
-from year_2020.solutions.python.utils.timing import timer
 
 Point = Tuple[int, ...]
 SparseMap = Set[Point]
 
 
-@timer
 def count_active_cubes_after_cycles(lines: List[str], dimensions: int, cycles: int) -> int:
     sparse_map: SparseMap = build_sparse_map_of_active_points(lines, dimensions)
     for c in range(1, cycles + 1):

@@ -4,10 +4,8 @@ from functools import reduce
 from typing import List, Dict, Tuple, Set, Callable, Generator
 
 from year_2020.solutions.python.utils.files import read_lines, INPUTS_FOLDER
-from year_2020.solutions.python.utils.timing import timer
 
 
-@timer
 def count_bags(bag_color: str,
                plain_text_rules: List[str],
                count_method: Callable[[str, Dict[str, List[Tuple[int, str]]]], int]) -> int:

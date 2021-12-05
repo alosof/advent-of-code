@@ -5,10 +5,8 @@ from math import prod, sqrt
 from typing import List, Dict, Set
 
 from year_2020.solutions.python.utils.files import INPUTS_FOLDER
-from year_2020.solutions.python.utils.timing import timer
 
 
-@timer
 def evaluate_water_roughness(tiles: Dict[int, List[List[str]]]) -> int:
     possible_border_hashes_by_tile: Dict[int, Set[int]] = all_possible_border_hashes_by_tile(tiles)
     possible_neighbors: Dict[int, Set[int]] = neighbors_by_tile(possible_border_hashes_by_tile)
@@ -161,7 +159,6 @@ def tile_positions_blueprint(neighbors: Dict[int, Set[int]]) -> List[List[int]]:
     return blueprint
 
 
-@timer
 def multiply_corner_tiles_ids(tiles: Dict[int, List[List[str]]]) -> int:
     possible_border_hashes_by_tile: Dict[int, Set[int]] = all_possible_border_hashes_by_tile(tiles)
     possible_neighbors: Dict[int, Set[int]] = neighbors_by_tile(possible_border_hashes_by_tile)

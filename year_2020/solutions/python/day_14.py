@@ -3,10 +3,8 @@ from itertools import product
 from typing import List, Union, Tuple, Dict
 
 from year_2020.solutions.python.utils.files import read_lines, INPUTS_FOLDER
-from year_2020.solutions.python.utils.timing import timer
 
 
-@timer
 def memory_size_after_initialization(initialization_program: List[str], version: int) -> int:
     memory: Dict[int, int] = {}
     mask: str = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'

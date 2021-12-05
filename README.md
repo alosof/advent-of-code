@@ -8,23 +8,12 @@
 
 - To run the Julia solution for a specific day :
 ```
-julia year_2021/solutions/julia/day_01.jl
-```
-
-- To run the Julia solutions for all days :
-```
-julia year_2021/solutions/julia/all_days.jl
+bash run.sh -l julia -y 2021 -d 5
 ```
 
 ### Python
 
 - To run the Python solution for a specific day :
 ```
-python -m year_2021.solutions.python.day_01
+bash run.sh -l python -y 2021 -d 5
 ```
-
-- To run the Python solutions for all days :
-```
-python -m year_2021.solutions.python.all_days
-```
-

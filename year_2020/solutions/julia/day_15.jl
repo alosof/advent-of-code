@@ -16,12 +16,12 @@ function main()
     input_list::Array{Int} = [9, 19, 1, 6, 0, 5, 4]
 
     # Part 1
-    part_1_result::Int = @time get_last_spoken_number(input_list, 2020)
+    part_1_result::Int = get_last_spoken_number(input_list, 2020)
     @assert part_1_result == 1522
     println("Part 1 result : ", part_1_result)
 
     # Part 2
-    part_2_result::Int = @time get_last_spoken_number(input_list, 30000000)
+    part_2_result::Int = get_last_spoken_number(input_list, 30000000)
     @assert part_2_result == 18234
     println("Part 2 result : ", part_2_result)
 end

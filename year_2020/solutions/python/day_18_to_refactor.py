@@ -12,7 +12,6 @@ OPS = {
 }
 
 
-@timer
 def do_homework(expressions: List[str], simple_expression_evaluator: Callable[[str], int]) -> int:
     return sum(evaluate(expression, simple_expression_evaluator) for expression in expressions)
 

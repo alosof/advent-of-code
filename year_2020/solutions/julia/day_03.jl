@@ -26,12 +26,12 @@ function main()
     input_list::Array{String} = readlines(input_file_path)
     
     # Part 1
-    part_1_result::Int = @time multiply_tree_counts_for_several_slopes(input_list, [(3, 1)])
+    part_1_result::Int = multiply_tree_counts_for_several_slopes(input_list, [(3, 1)])
     @assert part_1_result == 211
     println("Part 1 result : ", part_1_result)
 
     # Part 2
-    part_2_result::Int = @time multiply_tree_counts_for_several_slopes(input_list, [(1, 1), (3, 1), (5, 1), (7, 1), (1, 2)])
+    part_2_result::Int = multiply_tree_counts_for_several_slopes(input_list, [(1, 1), (3, 1), (5, 1), (7, 1), (1, 2)])
     @assert part_2_result == 3584591857
     println("Part 2 result : ", part_2_result)
 end

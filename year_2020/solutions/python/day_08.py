@@ -2,10 +2,8 @@ import os
 from typing import List, Tuple
 
 from year_2020.solutions.python.utils.files import read_lines, INPUTS_FOLDER
-from year_2020.solutions.python.utils.timing import timer
 
 
-@timer
 def evaluate_accumulator(instructions_list: List[str], fix_program: bool) -> int:
     if fix_program:
         return evaluate_accumulator_when_program_is_fixed(instructions_list)

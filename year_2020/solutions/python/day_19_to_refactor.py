@@ -4,10 +4,8 @@ from itertools import product
 from typing import List, Tuple, Dict, Union
 
 from year_2020.solutions.python.utils.files import INPUTS_FOLDER, read_list_of_lists
-from year_2020.solutions.python.utils.timing import timer
 
 
-@timer
 def part_2(clean_rules: Dict[int, List[str]], messages: List[str]) -> int:
     counter = 0
     for message in messages:
@@ -30,7 +28,6 @@ def rule_zero_new_regex(clean_rules: Dict[int, List[str]], n: int) -> str:
     return rule_0_regex
 
 
-@timer
 def part_1(clean_rules: Dict[int, List[str]], messages: List[str]) -> int:
     counter = 0
     rule_0_regex = rule_zero_regex(clean_rules)

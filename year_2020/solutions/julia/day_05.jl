@@ -24,12 +24,12 @@ function main()
     input_list::Array{String} = readlines(input_file_path)
 
     # Part 1
-    part_1_result::Int = @time get_max_id(input_list)
+    part_1_result::Int = get_max_id(input_list)
     @assert part_1_result == 953
     println("Part 1 result : ", part_1_result)
 
     # Part 2
-    part_2_result::Int = @time get_missing_id(input_list)
+    part_2_result::Int = get_missing_id(input_list)
     @assert part_2_result == 615
     println("Part 2 result : ", part_2_result)
 end

@@ -1,7 +1,3 @@
-from year_2020.solutions.python.utils.timing import timer
-
-
-@timer
 def find_encryption_key(door_public_key: int, card_public_key: int) -> int:
     card_loop_size: int = 1
     while True:

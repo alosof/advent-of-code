@@ -2,10 +2,8 @@ import os
 from typing import List, Dict, Tuple
 
 from year_2020.solutions.python.utils.files import read_lines, INPUTS_FOLDER
-from year_2020.solutions.python.utils.timing import timer
 
 
-@timer
 def count_valid_arrangements(joltages: List[int]) -> int:
     sorted_joltages: List[int] = sort_joltages_including_outlet_and_device(joltages)
     return count_valid_arrangements_of_sorted_joltages(sorted_joltages, memory={})
@@ -34,7 +32,6 @@ def is_valid_transition(reference_adapter_idx: int, candidate_adapter_idx: int, 
     return 1 <= joltages[candidate_adapter_idx] - joltages[reference_adapter_idx] <= 3
 
 
-@timer
 def compute_joltage_differences_distribution(joltages: List[int]) -> int:
     sorted_joltages: List[int] = sort_joltages_including_outlet_and_device(joltages)
     jumps = [a - b for a, b in zip(sorted_joltages[1:], sorted_joltages[:-1])]

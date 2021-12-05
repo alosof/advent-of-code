@@ -5,10 +5,8 @@ from operator import mul
 from typing import List
 
 from year_2020.solutions.python.utils.files import read_lines, INPUTS_FOLDER
-from year_2020.solutions.python.utils.timing import timer
 
 
-@timer
 def process_expense_report(input_sequence: List[int], tuple_size: int, expected_sum: int) -> int:
     return compute_product(find_tuple(input_sequence=input_sequence, tuple_size=tuple_size, expected_sum=expected_sum))
 

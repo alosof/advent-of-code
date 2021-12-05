@@ -39,12 +39,12 @@ function main()
     instructions::Array{String} = readlines(input_file_path)
     
     # Part 1
-    part_1_result::Int = @time move_with_simple_commands(instructions)
+    part_1_result::Int = move_with_simple_commands(instructions)
     @assert part_1_result == 1459206
     println("Part 1 result : ", part_1_result)
 
     # Part 2
-    part_2_result::Int = @time move_with_advanced_commands(instructions)
+    part_2_result::Int = move_with_advanced_commands(instructions)
     @assert part_2_result == 1320534480
     println("Part 2 result : ", part_2_result)
 end

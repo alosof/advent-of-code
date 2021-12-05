@@ -15,12 +15,12 @@ function main()
     input_list::Array{String} = readlines(input_file_path)
 
     # Part 1
-    part_1_result::Int = @time do_homework_with_no_precedence(input_list)
+    part_1_result::Int = do_homework_with_no_precedence(input_list)
     @assert part_1_result == 1890866893020
     println("Part 1 result : ", part_1_result)
 
     # Part 2
-    part_2_result::Int = @time do_homework_with_addition_precedence(input_list)
+    part_2_result::Int = do_homework_with_addition_precedence(input_list)
     @assert part_2_result == 34646237037193
     println("Part 2 result : ", part_2_result)
 end

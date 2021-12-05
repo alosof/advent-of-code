@@ -2,10 +2,8 @@ import os
 from typing import List, Tuple, Dict
 
 from year_2020.solutions.python.utils.files import INPUTS_FOLDER, read_lines
-from year_2020.solutions.python.utils.timing import timer
 
 
-@timer
 def count_black_tiles_after_animations(tiles_to_flip: List[str], days: int) -> int:
     floor: Dict[Tuple[int, int], int] = install_tile_floor(tiles_to_flip)
     for _ in range(days):
@@ -49,7 +47,6 @@ def adjacent_tiles(tile_coords: Tuple[int, int]) -> List[Tuple[int, int]]:
     return [(tile_coords[0] + offset_x, tile_coords[1] + offset_y) for offset_x, offset_y in offsets]
 
 
-@timer
 def count_black_tiles_after_floor_is_installed(tiles_to_flip: List[str]) -> int:
     floor: Dict[Tuple[int, int], int] = install_tile_floor(tiles_to_flip)
     return sum(floor.values())

@@ -11,12 +11,12 @@ function main()
     measurements::Array{Int} = parse.(Int, readlines(input_file_path))
     
     # Part 1
-    part_1_result::Int = @time count_measurement_increases(measurements)
+    part_1_result::Int = count_measurement_increases(measurements)
     @assert part_1_result == 1521
     println("Part 1 result : ", part_1_result)
 
     # Part 2
-    part_2_result::Int = @time (count_measurement_increases ∘ compute_size_three_window_sums)(measurements)
+    part_2_result::Int = (count_measurement_increases ∘ compute_size_three_window_sums)(measurements)
     @assert part_2_result == 1543
     println("Part 2 result : ", part_2_result)
 end

@@ -4,10 +4,8 @@ from math import lcm
 from typing import List, Tuple
 
 from year_2020.solutions.python.utils.files import INPUTS_FOLDER
-from year_2020.solutions.python.utils.timing import timer
 
 
-@timer
 def first_synchronized_departure(earliest_departure: int, buses_with_offsets: List[Tuple[int, int]]) -> int:
     departure: int = earliest_departure
     all_synchronized = False
@@ -24,7 +22,6 @@ def find_synchronized_buses(departure: int, buses_with_offsets: List[Tuple[int, 
     return [bus for bus, offset in buses_with_offsets if (departure + offset) % bus == 0]
 
 
-@timer
 def first_bus_multiplied_by_wait_time(earliest_departure: int, buses_with_offsets: List[Tuple[int, int]]) -> int:
     departure: int = earliest_departure
     while True:

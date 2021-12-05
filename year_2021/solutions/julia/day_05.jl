@@ -61,12 +61,12 @@ function main()
     segments::Array{Segment} = read_segments(input_file_path)
 
     # Part 1
-    part_1_result::Int = @time count_segment_overlaps(segments, false)
+    part_1_result::Int = count_segment_overlaps(segments, false)
     @assert part_1_result == 5774
     println("Part 1 result : ", part_1_result)
 
     # Part 2
-    part_2_result::Int = @time count_segment_overlaps(segments, true)
+    part_2_result::Int = count_segment_overlaps(segments, true)
     @assert part_2_result == 18423
     println("Part 2 result : ", part_2_result)
 end

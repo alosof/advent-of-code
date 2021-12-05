@@ -23,12 +23,12 @@ function main()
     report::Matrix{Int64} = read_matrix(input_file_path)
 
     # Part 1
-    part_1_result::Int = @time compute_power_consumption(report)
+    part_1_result::Int = compute_power_consumption(report)
     @assert part_1_result == 3309596
     println("Part 1 result : ", part_1_result)
 
     # Part 2
-    part_2_result::Int = @time compute_life_support_rating(report)
+    part_2_result::Int = compute_life_support_rating(report)
     @assert part_2_result == 2981085
     println("Part 2 result : ", part_2_result)
 end

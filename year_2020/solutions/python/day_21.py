@@ -6,10 +6,8 @@ from typing import Dict, List, Set, Tuple
 
 from year_2020.solutions.python.utils.dict import remove_key_from_mapping, remove_value_from_mapping
 from year_2020.solutions.python.utils.files import INPUTS_FOLDER, read_lines
-from year_2020.solutions.python.utils.timing import timer
 
 
-@timer
 def get_ordered_list_of_allergenic_ingredients(descriptions: List[str]) -> str:
     potential_ingredients_by_allergen, _ = parse_foods_descriptions(descriptions)
     allergen_mapping: Dict[str, str] = assign_allergens_to_ingredients(potential_ingredients_by_allergen, {})
@@ -34,7 +32,6 @@ def find_ingredient_with_min_allergens(potential_ingredients_by_allergen: Dict[s
     return min(potential_ingredients_by_allergen, key=lambda x: len(potential_ingredients_by_allergen[x]))
 
 
-@timer
 def count_non_allergenic_ingredients_occurrences(descriptions: List[str]) -> int:
     potential_ingredients_by_allergen, all_foods = parse_foods_descriptions(descriptions)
     all_ingredients: Set[str] = reduce(lambda x, y: x.union(y), all_foods)

@@ -3,10 +3,8 @@ import re
 from typing import List, Callable
 
 from year_2020.solutions.python.utils.files import read_blocks, INPUTS_FOLDER
-from year_2020.solutions.python.utils.timing import timer
 
 
-@timer
 def count_valid_passports(passports: List[str],
                           mandatory_fields: List[str],
                           validation_function: Callable[[str, str], bool]) -> int:

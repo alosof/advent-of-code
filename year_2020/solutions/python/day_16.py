@@ -4,10 +4,8 @@ from typing import Tuple, List, Dict, Set
 
 from year_2020.solutions.python.utils.dict import remove_key_from_mapping, remove_value_from_mapping
 from year_2020.solutions.python.utils.files import INPUTS_FOLDER
-from year_2020.solutions.python.utils.timing import timer
 
 
-@timer
 def multiply_departure_fields(own_ticket: List[int],
                               other_tickets: List[List[int]],
                               rules: Dict[str, Tuple[range, range]]) -> int:
@@ -55,7 +53,6 @@ def is_ticket_valid(ticket: List[int], rules: Dict[str, Tuple[range, range]]) ->
     return all(is_value_valid(value, rules) for value in ticket)
 
 
-@timer
 def ticket_scanning_error_rate(tickets: List[List[int]], rules: Dict[str, Tuple[range, range]]) -> int:
     return sum([value for ticket in tickets for value in ticket if not is_value_valid(value, rules)])
 

@@ -2,10 +2,8 @@ import os
 from typing import List, Tuple, Callable
 
 from year_2020.solutions.python.utils.files import read_lines, INPUTS_FOLDER
-from year_2020.solutions.python.utils.timing import timer
 
 
-@timer
 def count_valid_passwords(input_sequence: List[str], check_function: Callable[[str, str, int, int], bool]) -> int:
     return sum(check_function(*split_line(line)) for line in input_sequence)
 

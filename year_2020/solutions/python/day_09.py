@@ -3,10 +3,8 @@ from itertools import combinations
 from typing import List, Callable
 
 from year_2020.solutions.python.utils.files import read_lines, INPUTS_FOLDER
-from year_2020.solutions.python.utils.timing import timer
 
 
-@timer
 def hack(xmas_encrypted_data: List[int], hacking_method: Callable[[List[int]], int]) -> int:
     return hacking_method(xmas_encrypted_data)
 

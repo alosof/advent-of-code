@@ -27,12 +27,12 @@ function main()
     input_list::Array{String} = readlines(input_file_path)
     
     # Part 1
-    part_1_result::Int = @time count_valid_passwords(input_list, check_validity_old_policy)
+    part_1_result::Int = count_valid_passwords(input_list, check_validity_old_policy)
     @assert part_1_result == 506
     println("Part 1 result : ", part_1_result)
 
     # Part 2
-    part_2_result::Int = @time count_valid_passwords(input_list, check_validity_new_policy)
+    part_2_result::Int = count_valid_passwords(input_list, check_validity_new_policy)
     @assert part_2_result == 443
     println("Part 2 result : ", part_2_result)
 end
