@@ -11,9 +11,19 @@
 bash run.sh -l julia -y 2021 -d 5
 ```
 
+- To run the Julia solution for all days :
+```
+bash run.sh -l julia -y 2021 -d all
+```
+
 ### Python
 
 - To run the Python solution for a specific day :
 ```
 bash run.sh -l python -y 2021 -d 5
+```
+
+- To run the Python solution for a specific day :
+```
+bash run.sh -l python -y 2021 -d all
 ```

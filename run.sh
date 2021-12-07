@@ -1,7 +1,6 @@
 #!/bin/bash
 
-helpFunction()
-{
+function helpFunction() {
    echo ""
    echo "Usage: $0 -l language -y year -d day"
    echo -e "\t-l Programming language to use (python, julia)"
@@ -27,30 +26,59 @@ then
    helpFunction
 fi
 
+function run_day() {
+    _language=$1
+    _year=$2
+    _day=$3
 
-function main() {
-    formatted_day=$(printf '%02d' $day)
+    formatted_day=$(printf '%02d' $_day)
 
-    echo "**********************************************"
-    echo "**** YEAR $year - DAY $formatted_day - LANGUAGE $language ****"
-    echo "**********************************************"
-
-    if [ $language = "python" ]; then extension="py"; else extension="jl"; fi
-    solutions_folder=year_$year/solutions/$language
-    filepath=$solutions_folder/day_$formatted_day.$extension
+    if [ $_language = "python" ]; then
+        formatted_language="$_language"
+        solutions_folder="year_$_year/solutions/python"
+        filepath="$solutions_folder/day_$formatted_day.py"
+        module=year_$_year.solutions.python.day_$formatted_day
+        command="python -m $module"
+    elif [ $_language = "julia" ]; then
+        formatted_language="$_language "
+        solutions_folder="year_$_year/solutions/julia"
+        filepath="$solutions_folder/day_$formatted_day.jl"
+        command="julia $filepath"
+    fi
 
     if [ ! -f "$filepath" ]; then
         echo "ERROR: $filepath does not exist."
         exit 1
     fi
 
+    echo "**********************************************"
+    echo "**** YEAR $_year - DAY $formatted_day - LANGUAGE $formatted_language ****"
+    echo "**********************************************"
+
+    time $command
+}
+
+function main() {
+
     if [ $language = "python" ]; then
-        module=year_$year.solutions.python.day_$formatted_day
-        time python -m $module
+        solutions_folder="year_$year/solutions/python"
+        extension="py"
     elif [ $language = "julia" ]; then
-        time julia $filepath
+        solutions_folder="year_$year/solutions/julia"
+        extension="jl"
     else
         echo "Programming language $language is not supported. Valid options are: ('python', 'julia')"
+        exit 1
+    fi
+
+    if [ "$day" = "all" ]; then
+        for file in $solutions_folder/*.$extension
+        do
+            _day=$(echo $file | awk '{n=split($0,parts,"[._]"); print parts[n-1]}' | sed 's/^0*//')
+            run_day $language $year $_day
+        done
+    else
+        run_day $language $year $day
     fi
 }
 
