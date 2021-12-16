@@ -18,6 +18,11 @@ def read_int_line(input_file_path: Path) -> List[int]:
         return [int(e) for e in input_file.read().split(",")]
 
 
+def read_str(input_file_path: Path) -> str:
+    with open(input_file_path, 'r') as input_file:
+        return input_file.read()
+
+
 def read_str_grid(input_file_path: Path) -> List[List[str]]:
     with open(input_file_path, 'r') as input_file:
         return [list(line) for line in input_file.read().split('\n')]
